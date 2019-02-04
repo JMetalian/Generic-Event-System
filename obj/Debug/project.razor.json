@@ -1,6 +1,6 @@
 {
   "ProjectFilePath": "/Users/cankozan/Unity Projects/Generic-Event-System/Assembly-CSharp.csproj",
-  "TargetFramework": "v4.7.1",
+  "TargetFramework": "v4.5",
   "TagHelpers": [],
   "Configuration": {
     "ConfigurationName": "UnsupportedRazor",

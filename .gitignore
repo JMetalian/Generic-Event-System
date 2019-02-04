@@ -10,3 +10,5 @@ Temp/
 \.idea/\.idea\.Generic-Event-System/riderModule\.iml
 
 Assets/Plugins/Editor/JetBrains/
+
+\.DS_Store

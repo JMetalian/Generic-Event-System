@@ -1,26 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
-public class GameEventListener : MonoBehaviour
+
+public class GameEventListener : IListener<Listener>
 {
-    public GameEvent gameEvent;
-        
-    public UnityEvent response;
-
-    private void OnEnable()
+    public void OnRaised(Listener t)
     {
-        gameEvent.RegisterListener(this);
-    }
-
-    private void OnDisable()
-    {
-        gameEvent.DeRegisterListener(this);
-    }
-
-    public void OnEventRaised()
-    {
-        response.Invoke();
     }
 }

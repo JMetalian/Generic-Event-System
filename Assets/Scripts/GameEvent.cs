@@ -2,31 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameEvent : ScriptableObject
-{
-    private List<GameEventListener> listeners= new List<GameEventListener>();
+public class GameEvent<T> : ScriptableObject, IEventInterface<T>
+{   
 
-    public void Raise()
+    public List<IListener<T>> listenersVar;
+
+    private void OnEnable()
     {
-        for (int i = listeners.Count - 1; i >= 0; i--)
-        {
-            listeners[i].OnEventRaised();
-        }
+        listenersVar = new List<IListener<T>>();
+    }
+
+    public void AddListener(IListener<T> listener)
+    {
+        if(!listenersVar.Contains(listener)) listenersVar.Add(listener);
+    }
+    public void RemoveListener(IListener<T> listener)
+    {
+        if(!listenersVar.Contains(listener)) listenersVar.Remove(listener);
         
     }
-    public void RegisterListener(GameEventListener listener)
-    {
-        if (!listeners.Contains(listener))
+    public void Raise(T variable){
+        for (int i = listenersVar.Count-1; i>=0; i--)
         {
-            listeners.Add(listener);
-        }
-    }
-
-    public void DeRegisterListener(GameEventListener listener)
-    {
-         if (listeners.Contains(listener))
-        {
-            listeners.Remove(listener);
+            listenersVar[i].OnRaised(variable);
         }
     }
 }

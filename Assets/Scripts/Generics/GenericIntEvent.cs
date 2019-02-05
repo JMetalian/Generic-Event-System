@@ -3,6 +3,4 @@
 [CreateAssetMenu]
 public class GenericIntEvent : GameEvent<int>
 {
-
-    
 }

@@ -1,4 +1,10 @@
-﻿#if UNITY_5_6_OR_NEWER
+﻿using System.IO;
+using Sirenix.Serialization.Utilities.Editor;
+using Sirenix.Utilities;
+using UnityEditor;
+using UnityEditor.Build;
+
+#if UNITY_5_6_OR_NEWER
 
 //-----------------------------------------------------------------------
 // <copyright file="AssemblyImportSettingsAutomation.cs" company="Sirenix IVS">
@@ -8,16 +14,11 @@
 
 namespace Sirenix.OdinInspector.Editor
 {
-    using System.IO;
-    using Sirenix.Serialization.Utilities.Editor;
-    using Sirenix.Utilities;
-    using UnityEditor;
-    using UnityEditor.Build;
-
 #if UNITY_2018_1_OR_NEWER
     using UnityEditor.Build.Reporting;
+
 #endif
-    
+
     public class AssemblyImportSettingsAutomation :
 #if UNITY_2018_1_OR_NEWER
         IPreprocessBuildWithReport
@@ -28,19 +29,17 @@ namespace Sirenix.OdinInspector.Editor
         private const string JITAssemblyFolder = "NoEditor";
         private const string AOTAssemblyFolder = "NoEmitAndNoEditor";
 
-        public int callbackOrder { get { return -1500; } }
+        public int callbackOrder => -1500;
 
         private static void ConfigureImportSettings()
-        {   
-            if (EditorOnlyModeConfig.Instance.IsEditorOnlyModeEnabled() || ImportSettingsConfig.Instance.AutomateBeforeBuild == false)
-            {
-                return;
-            }
+        {
+            if (EditorOnlyModeConfig.Instance.IsEditorOnlyModeEnabled() ||
+                ImportSettingsConfig.Instance.AutomateBeforeBuild == false) return;
 
-            BuildTarget platform = EditorUserBuildSettings.activeBuildTarget;
-            string assemblyDirectory = Path.Combine("Assets", SirenixAssetPaths.SirenixAssembliesPath);
-            string[] aotAssemblies = Directory.GetFiles(Path.Combine(assemblyDirectory, AOTAssemblyFolder), "*.dll");
-            string[] jitAssemblies = Directory.GetFiles(Path.Combine(assemblyDirectory, JITAssemblyFolder), "*.dll");
+            var platform = EditorUserBuildSettings.activeBuildTarget;
+            var assemblyDirectory = Path.Combine("Assets", SirenixAssetPaths.SirenixAssembliesPath);
+            var aotAssemblies = Directory.GetFiles(Path.Combine(assemblyDirectory, AOTAssemblyFolder), "*.dll");
+            var jitAssemblies = Directory.GetFiles(Path.Combine(assemblyDirectory, JITAssemblyFolder), "*.dll");
 
             AssetDatabase.StartAssetEditing();
             try
@@ -65,12 +64,11 @@ namespace Sirenix.OdinInspector.Editor
             }
         }
 
-        private static void ApplyImportSettings(BuildTarget platform, string[] assemblyPaths, OdinAssemblyImportSettings importSettings)
+        private static void ApplyImportSettings(BuildTarget platform, string[] assemblyPaths,
+            OdinAssemblyImportSettings importSettings)
         {
-            for (int i = 0; i < assemblyPaths.Length; i++)
-            {
+            for (var i = 0; i < assemblyPaths.Length; i++)
                 AssemblyImportSettingsUtilities.SetAssemblyImportSettings(platform, assemblyPaths[i], importSettings);
-            }
         }
 
 #if UNITY_2018_1_OR_NEWER
@@ -81,7 +79,6 @@ namespace Sirenix.OdinInspector.Editor
         }
 
 #else
-
         void IPreprocessBuild.OnPreprocessBuild(BuildTarget target, string path)
         {
             ConfigureImportSettings();

@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu]
-public class GenericFloatEvent: GameEvent<float>
+public class GenericFloatEvent : GameEvent<float>
 {
-
 }

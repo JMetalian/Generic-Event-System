@@ -1,11 +1,10 @@
 using UnityEngine;
 
+public class Listener : MonoBehaviour
+{
+    private GameEventListener eventListener = new GameEventListener();
 
-    public class Listener:MonoBehaviour
+    public void OnRaised(Listener t)
     {
-        private GameEventListener eventListener = new GameEventListener();
-        public void OnRaised(Listener t)
-        {
-
-        }
     }
+}

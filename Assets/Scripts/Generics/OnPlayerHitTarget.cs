@@ -1,5 +1,3 @@
-using Generics;
-
 namespace Generics
 {
     public class OnPlayerHitTarget : InGameEvent<float>
@@ -8,7 +6,6 @@ namespace Generics
         {
             base.Raise(variable);
         }
-
     }
 
     public class PlayerNicknameChange : InGameEvent<string>
@@ -18,16 +15,13 @@ namespace Generics
             base.Raise(variable);
         }
     }
-    
-
 }
 
 public class TT
 {
-    public void abc ()
+    public void abc()
     {
-        
-        new GameEvent<NickName>().Raise(new NickName("22","22",""));
+        new GameEvent<NickName>().Raise(new NickName("22", "22", ""));
     }
 }
 

@@ -6,14 +6,11 @@ using UnityEngine;
 public class GameEvent<T> : ScriptableObject, IEventInterface<T>
 {
     public static List<IListener<T>> listenersVar;
-    
     public Dictionary<Type, List<IListener<T>>> list = new Dictionary<Type, List<IListener<T>>>();
-
     private void OnEnable()
     {
         listenersVar = new List<IListener<T>>();
     }
-
     public void AddListener(IListener<T> listener)
     {
         if (!list.ContainsKey(typeof(T))) list.Add(typeof(T), new List<IListener<T>>());

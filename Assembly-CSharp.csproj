@@ -12,8 +12,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{70C1AE65-9467-F8E5-392B-4ED569F040E6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -68,11 +67,11 @@
     <Compile Include="Assets\Scripts\GameEventListener.cs" />
     <Compile Include="Assets\Scripts\Generics\GenericBoolEvent.cs" />
     <Compile Include="Assets\Scripts\Generics\GenericFloatEvent.cs" />
+    <Compile Include="Assets\Scripts\Generics\GenericGameObjectEvent.cs" />
     <Compile Include="Assets\Scripts\Generics\GenericIntEvent.cs" />
     <Compile Include="Assets\Scripts\Generics\GenericObjectEvent.cs" />
     <Compile Include="Assets\Scripts\Generics\GenericStringEvent.cs" />
     <Compile Include="Assets\Scripts\Generics\InGameEvent.cs" />
-    <Compile Include="Assets\Scripts\Generics\GenericGameObjectEvent.cs" />
     <Compile Include="Assets\Scripts\Generics\OnPlayerHitTarget.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IEventInterface.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IListener.cs" />

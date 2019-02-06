@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "GameEvent")]
 public class GameEvent<T> : ScriptableObject, IEventInterface<T>
 {
     public static List<IListener<T>> listenersVar;

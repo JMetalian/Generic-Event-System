@@ -6,7 +6,13 @@ using UnityEngine;
 public class GameEvent<T> : ScriptableObject, IEventInterface<T>
 {
     public static List<IListener<T>> listenersVar;
+    
     public Dictionary<Type, List<IListener<T>>> list = new Dictionary<Type, List<IListener<T>>>();
+
+    private void OnEnable()
+    {
+        listenersVar = new List<IListener<T>>();
+    }
 
     public void AddListener(IListener<T> listener)
     {
@@ -31,10 +37,5 @@ public class GameEvent<T> : ScriptableObject, IEventInterface<T>
 //        {
 //            listenersVar[i].OnRaised(variable);
 //        }
-    }
-
-    private void OnEnable()
-    {
-        listenersVar = new List<IListener<T>>();
     }
 }

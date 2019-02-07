@@ -213,13 +213,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1065118542}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6cccf2a6be154f3bb7aabce4af63f17, type: 3}
+  m_Script: {fileID: 11500000, guid: a10db6cdbf0056c4da770e8ca99c8817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount:
-    UseConstant: 0
-    ConstantValue: 25
-    Variable: {fileID: 0}
+  moveSpeed:
+    useConst: 0
+    constVal: 0
+    _variable: {fileID: 11400000, guid: 5e8c74b25882d4947b9d4089c69f2a1d, type: 2}
 --- !u!1 &1429079532
 GameObject:
   m_ObjectHideFlags: 0

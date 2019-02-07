@@ -63,7 +63,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Editor\EventEditor.cs" />
+    <Compile Include="Assets\SO Architecture\Editor\Code Generation\SO_CodeGenerationWindow.cs" />
+    <Compile Include="Assets\SO Architecture\Editor\Code Generation\SO_CodeGenerator.cs" />
+    <Compile Include="Assets\SO Architecture\Editor\Drawers\BaseReferenceDrawer.cs" />
+    <Compile Include="Assets\SO Architecture\Editor\Drawers\DeveloperDescriptionDrawer.cs" />
+    <Compile Include="Assets\SO Architecture\Editor\Drawers\GenericPropertyDrawer.cs" />
+    <Compile Include="Assets\SO Architecture\Editor\Inspectors\BaseGameEventEditor.cs" />
+    <Compile Include="Assets\SO Architecture\Editor\Inspectors\BaseGameEventListenerEditor.cs" />
+    <Compile Include="Assets\SO Architecture\Editor\Inspectors\BaseVariableEditor.cs" />
+    <Compile Include="Assets\SO Architecture\Editor\Inspectors\CollectionEditor.cs" />
+    <Compile Include="Assets\SO Architecture\Editor\Inspectors\GameEventEditor.cs" />
+    <Compile Include="Assets\SO Architecture\Editor\Inspectors\GameEventListenerEditor.cs" />
+    <Compile Include="Assets\SO Architecture\Editor\Inspectors\StackTrace.cs" />
+    <Compile Include="Assets\SO Architecture\Editor\Inspectors\TypedGameEventEditor.cs" />
+    <Compile Include="Assets\SO Architecture\Editor\Inspectors\TypesGameEventListenerEditor.cs" />
+    <Compile Include="Assets\SO Architecture\Editor\SerializedPropertyHelper.cs" />
+    <Compile Include="Assets\SO Architecture\Editor\SOArchitecture_EditorUtility.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/cankozan/Unity Projects/Generic-Event-System/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -318,24 +333,6 @@
     </Reference>
     <Reference Include="JetBrains.Rider.Unity.Editor.Plugin.Repacked">
       <HintPath>/Users/cankozan/Unity Projects/Generic-Event-System/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.OdinInspector.Editor">
-      <HintPath>/Users/cankozan/Unity Projects/Generic-Event-System/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.Utilities.Editor">
-      <HintPath>/Users/cankozan/Unity Projects/Generic-Event-System/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.Utilities">
-      <HintPath>/Users/cankozan/Unity Projects/Generic-Event-System/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.Serialization">
-      <HintPath>/Users/cankozan/Unity Projects/Generic-Event-System/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.Serialization.Config">
-      <HintPath>/Users/cankozan/Unity Projects/Generic-Event-System/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.OdinInspector.Attributes">
-      <HintPath>/Users/cankozan/Unity Projects/Generic-Event-System/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>/Users/cankozan/Unity Projects/Generic-Event-System/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -714,17 +711,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{7D363935-89AA-E264-26C1-8834C67A2A4B}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{70C1AE65-9467-F8E5-392B-4ED569F040E6}</Project>
       <Name>Assembly-CSharp</Name>
-    </ProjectReference>
-    <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
-      <Project>{9AAE7348-63C6-2684-E4A1-1A61A5CD9FE3}</Project>
-      <Name>Assembly-CSharp-Editor-firstpass</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

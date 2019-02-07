@@ -2,3 +2,7 @@
 {
     void OnRaised(T t);
 }
+public interface IListener
+{
+    void OnRaised();
+}//DONE

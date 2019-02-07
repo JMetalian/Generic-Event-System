@@ -65,17 +65,17 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\GameEvent.cs" />
     <Compile Include="Assets\Scripts\GameEventListener.cs" />
-    <Compile Include="Assets\Scripts\Generics\GenericBoolEvent.cs" />
-    <Compile Include="Assets\Scripts\Generics\GenericFloatEvent.cs" />
-    <Compile Include="Assets\Scripts\Generics\GenericGameObjectEvent.cs" />
-    <Compile Include="Assets\Scripts\Generics\GenericIntEvent.cs" />
-    <Compile Include="Assets\Scripts\Generics\GenericObjectEvent.cs" />
-    <Compile Include="Assets\Scripts\Generics\GenericStringEvent.cs" />
+    <Compile Include="Assets\Scripts\Generics\BoolEvent.cs" />
+    <Compile Include="Assets\Scripts\Generics\DoubleEvent.cs" />
+    <Compile Include="Assets\Scripts\Generics\FloatEvent.cs" />
+    <Compile Include="Assets\Scripts\Generics\GameObjectEvent.cs" />
     <Compile Include="Assets\Scripts\Generics\InGameEvent.cs" />
+    <Compile Include="Assets\Scripts\Generics\IntEventEvent.cs" />
+    <Compile Include="Assets\Scripts\Generics\ObjectEvent.cs" />
     <Compile Include="Assets\Scripts\Generics\OnPlayerHitTarget.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\IEventInterface.cs" />
+    <Compile Include="Assets\Scripts\Generics\StringEvent.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IGameEvent.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IListener.cs" />
-    <Compile Include="Assets\Scripts\Listener.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/cankozan/Unity Projects/Generic-Event-System/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -294,24 +294,6 @@
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.OdinInspector.Editor">
-      <HintPath>/Users/cankozan/Unity Projects/Generic-Event-System/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.Utilities.Editor">
-      <HintPath>/Users/cankozan/Unity Projects/Generic-Event-System/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.Utilities">
-      <HintPath>/Users/cankozan/Unity Projects/Generic-Event-System/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.Serialization">
-      <HintPath>/Users/cankozan/Unity Projects/Generic-Event-System/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.Serialization.Config">
-      <HintPath>/Users/cankozan/Unity Projects/Generic-Event-System/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.OdinInspector.Attributes">
-      <HintPath>/Users/cankozan/Unity Projects/Generic-Event-System/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>/Users/cankozan/Unity Projects/Generic-Event-System/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
@@ -667,12 +649,6 @@
     <Reference Include="mscorlib">
       <HintPath>/Applications/Unity/Unity.app/Contents/NetStandard/compat/2.0.0/shims/netfx/mscorlib.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{7D363935-89AA-E264-26C1-8834C67A2A4B}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

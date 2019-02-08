@@ -38,6 +38,8 @@ public abstract class GameEvent<T> : ScriptableObject, IGameEvent<T>
             listenersVar[i].OnRaised(variable);
         }
     }
+    
+    
 }
 public abstract class GameEvent: ScriptableObject,IGameEvent
 {
@@ -53,6 +55,11 @@ public abstract class GameEvent: ScriptableObject,IGameEvent
         for (int i = listenersVar.Count; i >= 0; i--)
         {
             listenersVar[i].OnRaised();
+        }
+    }
+    public void DisplayListeners(){//func that prints out all the objects referencing this event
+        for(int i = listenersVar.Count -1; i>=0;i--){
+            Debug.Log(listenersVar[i]);
         }
     }
 

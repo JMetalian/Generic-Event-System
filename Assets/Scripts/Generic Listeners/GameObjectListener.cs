@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-public class GameObjectListener : GameEventListener<GameObject>
+public class GameObjectListener : GameEventListener<GameObject,GameObjectEvent,GameObjectUnityResponse>
 {
 
 }

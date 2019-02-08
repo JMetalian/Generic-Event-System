@@ -1,5 +1,5 @@
 ﻿
-public class ObjectListener : GameEventListener<object>
+public class ObjectListener : GameEventListener<object,ObjectEvent,ObjectUnityResponse>
 {
 
 }

@@ -1,5 +1,5 @@
 ﻿
-public class FloatListener : GameEventListener<float>
+public class FloatListener : GameEventListener<float,FloatEvent,FloatUnityResponse>
 {
 
 }

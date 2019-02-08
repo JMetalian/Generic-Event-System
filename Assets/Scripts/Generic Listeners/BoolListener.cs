@@ -1,4 +1,4 @@
-﻿public class BoolListener : GameEventListener<bool>
+﻿public class BoolListener : GameEventListener<bool,BoolEvent,BoolUnityResponse>
 {
 
 }

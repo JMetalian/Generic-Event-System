@@ -1,6 +1,6 @@
 ﻿
 
-public class DoubleListener : GameEventListener<double>
+public class DoubleListener : GameEventListener<double,DoubleEvent,DoubleUnityResponse>
 {
 
 }

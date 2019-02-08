@@ -1,14 +1,21 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-
-public abstract class GameEventListener<T> : MonoBehaviour, IListener<T>
+public abstract class GameEventListener<T,GenericEvent,GenericResponse> : MonoBehaviour, IListener<T>
+    where GenericEvent : GameEvent<T>
+    where GenericResponse : UnityEvent<T>
 {
-    protected GameEvent<T> ev,formerEv;
+    
     private ScriptableObject Ev => ev;//GET
-
-    private UnityEvent<T> returnedResp;
     private UnityEventBase Resp => returnedResp;//GET
+
+    
+    [SerializeField]
+    private GenericEvent ev;
+    [SerializeField]
+    private GenericEvent formerEv;
+    [SerializeField]
+    private GenericResponse returnedResp;
 
     public void OnRaised(T t)
     {
@@ -39,14 +46,22 @@ public abstract class GameEventListener<T> : MonoBehaviour, IListener<T>
     }
 }
 
-public abstract class GameEventListener : MonoBehaviour, IListener
-{
-    private GameEvent ev,formerEv;
-    private UnityEvent returnedResp;
+public abstract class GameEventListener<GenericEvent,GenericResponse> : MonoBehaviour, IListener
+where GenericEvent : GameEvent
+where GenericResponse : UnityEvent
+{    
+    private ScriptableObject GameEvent => ev;//GET
 
-    private ScriptableObject Ev => ev;//GET
+    public UnityEvent Response => returnedResp;//GET
+    
+    [SerializeField]
+    private GenericEvent ev;
+    [SerializeField]
+    private GenericEvent formerEv;
+    [SerializeField]
+    private GenericResponse returnedResp;
 
-    public UnityEvent Resp => returnedResp;//GET
+
 
     public void OnRaised()
     {

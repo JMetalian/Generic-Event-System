@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+public abstract class Reference { }
 [System.Serializable]
 public abstract class Reference<T, TT> : Reference where TT : GenericVariable<T>
 {
@@ -15,32 +16,31 @@ public abstract class Reference<T, TT> : Reference where TT : GenericVariable<T>
     [SerializeField]
     protected T constVal;
     [SerializeField]
-    protected TT _variable;
+    protected TT vari;
 
     public T Value
     {
-        get { return useConst ? constVal : _variable.Value; }
+        get { return useConst ? constVal : vari.Value; }
         set
         {
-            if (!useConst && _variable != null)
-                _variable.Value = value;
+            if (!useConst && vari != null)
+                vari.Value = value;
             else if (useConst)
                 constVal = value;
         }
     }
     public void AddListener(IListener listener)
     {
-        if (_variable != null)
-            _variable.AddListener(listener);
+        if (vari != null)
+            vari.AddListener(listener);
     }
     public void RemoveListener(IListener listener)
     {
-        if (_variable != null)
-            _variable.RemoveListener(listener);
+        if (vari != null)
+            vari.RemoveListener(listener);
     }
-    public override string ToString()
-    {
-        return Value.ToString();
-    }
+//    public override string ToString()
+//    {
+//        return Value.ToString();
+//    }
 }
-public abstract class Reference { }

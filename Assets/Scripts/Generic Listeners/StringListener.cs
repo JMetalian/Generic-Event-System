@@ -1,5 +1,5 @@
 ﻿
-public class StringListener : GameEventListener<string>
+public class StringListener : GameEventListener<string,StringEvent,StringUnityResponse>
 {
 
 }

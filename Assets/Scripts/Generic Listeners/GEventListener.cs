@@ -1,4 +1,7 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Events;
+
 [ExecuteInEditMode]
-public class GEvenListener : GameEventListener<GameEvent>{}
+public sealed class GEventListener : GameEventListener<GameEvent, UnityEvent>
+{
+}

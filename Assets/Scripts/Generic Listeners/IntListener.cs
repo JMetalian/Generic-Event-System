@@ -1,5 +1,5 @@
 ﻿
-public class IntListener : GameEventListener<int>
+public class IntListener : GameEventListener<int,IntEvent,IntUnityResponse>
 {
 
 }

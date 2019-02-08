@@ -3,36 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class GameEvent<T> : ScriptableObject, IEventInterface<T>
+public class GameEvent : ScriptableObject
 {
-    public static List<IListener<T>> listenersVar;
-    public Dictionary<Type, List<IListener<T>>> list = new Dictionary<Type, List<IListener<T>>>();
-    private void OnEnable()
-    {
-        listenersVar = new List<IListener<T>>();
-    }
-    public void AddListener(IListener<T> listener)
-    {
-        if (!list.ContainsKey(typeof(T))) list.Add(typeof(T), new List<IListener<T>>());
+    /// <summary>
+    /// The list of listeners that this event will notify if it is raised.
+    /// </summary>
+    private readonly List<GameEventListener> eventListeners = 
+        new List<GameEventListener>();
 
-        list[typeof(T)].Add(listener);
-
-        if (!listenersVar.Contains(listener)) listenersVar.Add(listener);
+    public void Raise()
+    {
+        for(int i = eventListeners.Count -1; i >= 0; i--)
+                eventListeners[i].OnEventRaised();
     }
 
-    public void RemoveListener(IListener<T> listener)
+    public void RegisterListener(GameEventListener listener)
     {
-        if (listenersVar.Contains(listener)) listenersVar.Remove(listener);
+        if (!eventListeners.Contains(listener))
+                eventListeners.Add(listener);
     }
 
-    public virtual void Raise(T variable)
+    public void UnregisterListener(GameEventListener listener)
     {
-        List<IListener<T>> listener;
-        list.TryGetValue(variable.GetType(), out listener);
-        listener.ForEach(listener1 => listener1.OnRaised(variable));
-//        for (int i = listenersVar.Count-1; i>=0; i--)
-//        {
-//            listenersVar[i].OnRaised(variable);
-//        }
+        if (eventListeners.Contains(listener))
+                eventListeners.Remove(listener);
     }
 }

@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e4fcf3c3e7948541bf9c132b260633d, type: 3}
-  m_Name: Movement Speed
+  m_Script: {fileID: 11500000, guid: 6d1f994f11d4c4c4aabd937a2b91cc8a, type: 3}
+  m_Name: New Bool Event
   m_EditorClassIdentifier: 
-  val: 0.2

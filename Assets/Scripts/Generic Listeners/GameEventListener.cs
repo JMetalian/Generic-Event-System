@@ -10,9 +10,9 @@ public abstract class GameEventListener<T,GenericEvent,GenericResponse> : MonoBe
     private UnityEventBase Resp => returnedResp;//GET
 
     
-    [SerializeField]
+
     private GenericEvent ev;
-    [SerializeField]
+  
     private GenericEvent formerEv;
     [SerializeField]
     private GenericResponse returnedResp;
@@ -54,9 +54,9 @@ where GenericResponse : UnityEvent
 
     public UnityEvent Response => returnedResp;//GET
     
-    [SerializeField]
+    
     private GenericEvent ev;
-    [SerializeField]
+    
     private GenericEvent formerEv;
     [SerializeField]
     private GenericResponse returnedResp;

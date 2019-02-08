@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 1065118544}
   - component: {fileID: 1065118543}
   - component: {fileID: 1065118547}
+  - component: {fileID: 1065118548}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -219,7 +220,24 @@ MonoBehaviour:
   moveSpeed:
     useConst: 0
     constVal: 5
-    vari: {fileID: 11400000, guid: 5e8c74b25882d4947b9d4089c69f2a1d, type: 2}
+    vari: {fileID: 0}
+--- !u!114 &1065118548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065118542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6923374f021ce46dfb8885132d2ad88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  returnedResp:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1429079532
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,7 +414,6 @@ GameObject:
   - component: {fileID: 2055325509}
   - component: {fileID: 2055325508}
   - component: {fileID: 2055325507}
-  - component: {fileID: 2055325511}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Untagged
@@ -476,36 +493,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0.95900005, y: -0.002, z: -0.28300002}
---- !u!114 &2055325511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2055325506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6923374f021ce46dfb8885132d2ad88b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ev: {fileID: 0}
-  formerEv: {fileID: 0}
-  returnedResp:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 802643bd46d904f53936958ac1f4819c, type: 2}
-        m_MethodName: Raise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &2135959189
 GameObject:
   m_ObjectHideFlags: 0

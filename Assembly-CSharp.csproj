@@ -83,8 +83,10 @@
     <Compile Include="Assets\Scripts\Generic Types\BoolVariable.cs" />
     <Compile Include="Assets\Scripts\Generic Types\DoubleVariable.cs" />
     <Compile Include="Assets\Scripts\Generic Types\FloatVariable.cs" />
+    <Compile Include="Assets\Scripts\Generic Types\GameObjectVariable.cs" />
     <Compile Include="Assets\Scripts\Generic Types\GenericVariable.cs" />
     <Compile Include="Assets\Scripts\Generic Types\IntVariable.cs" />
+    <Compile Include="Assets\Scripts\Generic Types\ObjectVariable.cs" />
     <Compile Include="Assets\Scripts\Generic Types\StringVariable.cs" />
     <Compile Include="Assets\Scripts\Generics Events\BoolEvent.cs" />
     <Compile Include="Assets\Scripts\Generics Events\DoubleEvent.cs" />
@@ -98,8 +100,14 @@
     <Compile Include="Assets\Scripts\Generics Events\OnPlayerHitTarget.cs" />
     <Compile Include="Assets\Scripts\Generics Events\StringEvent.cs" />
     <Compile Include="Assets\Scripts\Player\KeyboardInput.cs" />
+    <Compile Include="Assets\Scripts\References\BoolReference.cs" />
+    <Compile Include="Assets\Scripts\References\DoubleReference.cs" />
     <Compile Include="Assets\Scripts\References\FloatReference.cs" />
+    <Compile Include="Assets\Scripts\References\GameObjectReference.cs" />
+    <Compile Include="Assets\Scripts\References\IntReference.cs" />
+    <Compile Include="Assets\Scripts\References\ObjectReference.cs" />
     <Compile Include="Assets\Scripts\References\Reference.cs" />
+    <Compile Include="Assets\Scripts\References\StringReference.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/cankozan/Unity Projects/Generic-Event-System/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
